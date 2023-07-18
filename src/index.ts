@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import "reflect-metadata";
 import morgan from "morgan";
 import cors from "cors";
-import globalRouter from "../src/routes";
+import globalRouter from "./routes";
 
 dotenv.config();
 const PORT = 6001;
