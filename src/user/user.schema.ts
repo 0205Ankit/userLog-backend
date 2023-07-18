@@ -1,7 +1,7 @@
 import z from "zod"
 
 export const validateIdSchema = z.object({
-  id: z.number().min(1).nonnegative(),
+  id: z.string(),
 });
 
 export const userSchema = z.object({

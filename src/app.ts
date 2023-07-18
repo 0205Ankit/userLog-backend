@@ -18,6 +18,8 @@ declare global {
         age: number;
         gender: string;
         phone: string;
+        url: string | null;
+        imageName:string | null;
       };
     }
   }

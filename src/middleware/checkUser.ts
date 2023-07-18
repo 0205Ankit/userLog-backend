@@ -9,14 +9,13 @@ export default async function checkUser(
   next: NextFunction
 ) {
   const { body } = req.body;
+  const valid = validateIdSchema.parse({ id: body.id });
 
-  const error = validateIdSchema.parse({ id: body.id });
-
-  if (error) {
+  if (!valid) {
     return res.status(StatusCodes.BAD_REQUEST).json("Cant find User for your Request");
   }
 
-  const user = await prisma.user.findUnique({
+  const user = await prisma.user.findFirst({
     where: { id: body.id },
   });
 
